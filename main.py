@@ -6,9 +6,11 @@ import discord_automessage
 key = '4fe777d7-b24e-4d31-a470-ad16d46f9e67'
 guild = 'Gamer%20Buddies'
 
+print(f'https://api.hypixel.net/guild?key={key}&name={guild}')
+
 while True:
     day = datetime.datetime.now()
-    if day.weekday() == 5 and day.hour == 23 and day.minute == 59:
+    if day.weekday() == 5 and day.hour == 22 and day.minute == 00:
         discord_automessage.sendMessage('943465265902022686', '!clear 100')
         data = requests.get(f'https://api.hypixel.net/guild?key={key}&name={guild}').json()
         for member in data['guild']['members']:
